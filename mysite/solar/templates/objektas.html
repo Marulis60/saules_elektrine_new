@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block "title" %}Solar: objektas>{% endblock %}
+{% block "content" %}
+{% load static %}
+
+
+<div class="container">
+    {% if objektas.vaizdelis %}
+    <div>
+        <img src="{{ objektas.vaizdelis.url }}" class="max-width: 10%" alt="...">
+        {% else %}
+        <img src="{% static 'img/no-image.png' %}" class="max-width: 20%">
+    </div>
+    {% endif %}
+    <h4>Savininkas: {{ objektas.savininkas }} </h4>
+    <h4>Adresas:  {{ objektas.adresas }} </h4>
+    <hr>
+    <p>Instaliuota ESO galia:   {{ objektas.eso_galia }} </p>
+    <p>Saulės galia:            {{ objektas.saules_galia }} </p>
+    <p>Akumuliatoriaus talpa: {{ objektas.akumuliatoriaus_talpa }} </p>
+    <p>Elektromobilio talpa: {{ objektas.elektromobilio_talpa }} </p>
+    <p>Akumuliatoriaus būsena:</p>
+    <p class="{% if objektas.status == 'a' %}text-success{% elif objektas.status == 'p' %}text-danger{% elif objektas.status == 't' %}text-danger{% else %}text-warning{% endif %}">
+        {{ objektas.get_status_display }}</p>
+</div>
+
+{% endblock %}

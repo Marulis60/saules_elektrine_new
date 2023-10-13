@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block "title" %}Solar: Mano objektas{% endblock %}
+
+{% block "content" %}
+{% load static %}
+<h1>Objektas:</h1>
+<ul>
+    <div class="row">
+        <img class="rounded-circle account-img" src="{{ vartotojas.profilis.nuotrauka.url }}"
+             style="width: 200px; height: auto;">
+        <p><strong>Vartotojas: </strong>{{ vartotojas.username }}</p>
+<!--                {% if instance.reader == user %}-->
+            <div>
+                <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'manoobjektas_update' objektas.id %}">Redaguoti</a>
+                <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'manoobjektas_delete' objektas.id %}">Ištrinti</a>
+            </div>
+<!--        {% endif %}-->
+    </div>
+</ul>
+{% endblock %}

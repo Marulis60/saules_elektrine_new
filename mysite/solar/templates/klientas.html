@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block "title" %}Solar: klientas{% endblock %}
+
+{% block "content" %}
+<div class="container">
+    <h4>{{ klientas.vardas }} {{klientas.pavarde }}</h4>
+    <hr>
+    <p>Telefonas: {{ klientas.telefonas }} </p>
+    <p>Adresas: {{klientas.adresas }}</p>
+    <p>{{ klientas.aprasymas | safe }}</p>
+    <h5>Klientas turi šiuos objektus</h5>
+    {% for objektas in klientas.objektai.all %}
+    <li><a href="{% url 'objektas' objektas.pk %}">{{objektas}}</a></li>
+    {% endfor%}
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block "title" %}NordPool duomenys: Home>{% endblock %}
+
+
+{% block "content" %}
+  <h1>Solar plant</h1>
+  <p>šiuo metu turime:</p>
+
+<ul>
+  <li><strong>Objektų:  </strong>{{num_objects}}</li>
+  <li><strong>klientų:  </strong>{{num_clients}}</li>
+</ul>
+<p>Čia jūs lankotes {{ num_visits }}-ą kartą.</p>
+{% endblock %}
