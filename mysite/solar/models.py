@@ -9,12 +9,12 @@ import pytz
 
 
 # Create your models here.
-class Birza(models.Model):
+class MyBirza(models.Model):
     valandos=models.TimeField()
     kaina =models.FloatField(verbose_name='Kaina',)
     rusiuota =models.IntegerField(verbose_name='Rušiuota')
-    pakrovimas  = models.BinaryField(verbose_name='Pakrovimas')
-    iskrovimas  = models.BinaryField(verbose_name='Iškrovimas')
+    pakrovimas  = models.CharField(verbose_name='Pakrovimas', max_length=20)
+    iskrovimas  = models.CharField(verbose_name='Iškrovimas', max_length=20)
 
 
     def __str__(self):
