@@ -15,14 +15,14 @@
       <!-- FORM HERE -->
               <form method="POST" enctype="multipart/form-data">
           {% csrf_token %}
-          <fieldset>
-              <legend class="border-bottom mb-4">Profilio info</legend>
-              {{ u_form|crispy }}
-              {{ p_form|crispy }}
-          </fieldset>
-          <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Atnaujinti</button>
-          </div>
+<!--          <fieldset>-->
+<!--              <legend class="border-bottom mb-4">Profilio info</legend>-->
+<!--              {{ u_form|crispy }}-->
+<!--              {{ p_form|crispy }}-->
+<!--          </fieldset>-->
+<!--          <div class="form-group">-->
+<!--                <button class="btn btn-outline-info" type="submit">Atnaujinti</button>-->
+<!--          </div>-->
       </form>
     </div>
 {% endblock %}

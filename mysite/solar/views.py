@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, reverse
-from .models import Objektas, Klientas
+from .models import Objektas, Klientas, MyBirza
 from django.views import generic
 from django.core.paginator import Paginator
 from django.db.models import Q
@@ -12,7 +12,10 @@ from django.contrib.auth.forms import User
 from .forms import ObjektasReviewForm, UserUpdateForm, ProfilisUpdateForm, UserObjektaiCreateUpdateForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import UserPassesTestMixin
+import csv
+import pandas as pd
 
+from django.http import HttpResponse
 
 # Create your views here.
 
@@ -197,3 +200,10 @@ class UserObjektaiDeleteView(LoginRequiredMixin, UserPassesTestMixin, generic.De
     def test_func(self):
         objektas = self.get_object()
         return self.request.user == objektas.reader
+
+def my_view(request):
+        birza_csv = pd.read_csv('birza.csv', encoding="UTF-8")
+        birza_py = birza_csv.to_numpy()
+        for row in birza_py:
+            my_objects = birza_py
+            return render(request, 'birza_template.html', {'my_objects': my_objects})

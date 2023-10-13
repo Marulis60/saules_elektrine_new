@@ -17,5 +17,7 @@ urlpatterns = [
     path("manoobjektai/<int:pk>/update", views.UserObjektaiUpdateView.as_view(), name='manoobjektas_Update'),
     path("manoobjektai/<int:pk>/delete", views.UserObjektaiDeleteView.as_view(), name='manoobjektas_delete'),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('load-data/', views.my_view, name='load-data'),
+    # path('show-data/', views.show_data, name='show-data'),
 
 ]

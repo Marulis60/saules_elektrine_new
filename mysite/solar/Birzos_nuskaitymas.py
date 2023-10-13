@@ -82,7 +82,7 @@ if dabartinis_laikas >= 10 and dabartinis_laikas < 24:
     # kainų įrašymas į csv failą
     with open("birza00.csv", 'w', encoding="UTF-8", newline='') as failas:
         csv_writer = csv.writer(failas)
-        csv_writer.writerow(['LAIKAS', 'KAINA', 'RŪŠIAVIMAS', 'ĮKRAUTI', 'IŠKRAUTI'])
+        csv_writer.writerow(['VALANDOS', 'KAINA', 'RŪŠIAVIMAS', 'ĮKRAUTI', 'IŠKRAUTI'])
         for i in range(24):
             csv_writer.writerow([laikas[i], kaina[i], indeksas[i],start_in[i], start_out[i]] )
     bandom_nuskaityti=False
