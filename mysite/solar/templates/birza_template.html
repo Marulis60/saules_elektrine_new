@@ -1,27 +1,28 @@
 {% extends "base.html" %}
-
 {% block "title" %}Solar: Mano objektai{% endblock %}
-
 {% block "content" %}
 {% load static %}
 <h1>Mano birža:</h1>
-    <table>
-      <tr>
-         <th>Valandos</th>
-    <th>Kaina</th>
-    <th>Surūšiuotas indeksas</th>
-    <th>akumuliatoriaus pakrovimas</th>
-    <th>akumuliatoriaus iškrovimas</th>
-            </tr>
+<table>
+    <thead>
+    <tr>
+        <th>Valandos</th>
+        <th>Kaina</th>
+        <th>Surūšiuotas indeksas</th>
+        <th>akumuliatoriaus pakrovimas</th>
+        <th>akumuliatoriaus iškrovimas</th>
+    </tr>
+    </thead>
+    <tbody>
     <tr>
         {% for obj in my_objects %}
-    <td>{{ obj.0 }}</td>
-    <td>{{ obj.1}}</td>
-    <td>{{ obj.2 }}</td>
-    <td>{{ obj.3 }}</td>
-    <td>{{ obj.4 }}</td>
-  </tr>
-        {% endfor %}
-    </table>
-
+        <td>{{ obj.0 }}</td>
+        <td>{{ obj.1}}</td>
+        <td>{{ obj.2 }}</td>
+        <td>{{ obj.3 }}</td>
+        <td>{{ obj.4 }}</td>
+    </tr>
+    </tbody>
+    {% endfor %}
+</table>
 {% endblock %}

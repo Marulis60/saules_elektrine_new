@@ -1,17 +1,17 @@
 from django.contrib import admin
-from .models import Klientas, Objektas, Profilis  #, ObjektasReview
+from .models import Klientas, Objektas, Profilis
 
 
 class ObjektasInline(admin.TabularInline):
     model = Objektas
     extra = 0
-#
+
 
 class KlientasAdmin(admin.ModelAdmin):
     list_display = ['vardas', 'pavarde', 'adresas']
     # inlines = [ObjektasInline]
-# #
-# #
+
+
 class ObjektasAdmin(admin.ModelAdmin):
     list_display = ['adresas', 'eso_galia', 'saules_galia', 'akumuliatoriaus_talpa', 'elektromobilio_talpa', 'user',
                     'status', 'vaizdelis']
@@ -22,9 +22,9 @@ class ObjektasAdmin(admin.ModelAdmin):
     fieldsets = (
         ('Vartotojas', {'fields': ('user', 'adresas', 'klientas')}),
         ('Galingumai',
-         {'fields': ('eso_galia', 'saules_galia', 'akumuliatoriaus_talpa', 'elektromobilio_talpa', 'status', 'vaizdelis')}),
+         {'fields': (
+             'eso_galia', 'saules_galia', 'akumuliatoriaus_talpa', 'elektromobilio_talpa', 'status', 'vaizdelis')}),
     )
-    # inlines = [ObjektasInline]
 
 
 # Register your models here.

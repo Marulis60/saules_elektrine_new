@@ -1,17 +1,13 @@
 {% extends "base.html" %}
-
 {% block "title" %}Solar: Mano objektai{% endblock %}
-
 {% block "content" %}
 {% load static %}
 <h1>Mano objektai:</h1>
 <ul>
     <div class="row">
         {% for objektas in objektai %}
-       <h4 class="card-subtitle mb-2 text-muted">{{ objektas }}</h4>
+        <h4 class="card-subtitle mb-2 text-muted">{{ objektas }}</h4>
         {% endfor %}
     </div>
-<!--    <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'manoobjektai_new' %}">Sukurti egzempliorių</a>-->
-
 </ul>
 {% endblock %}

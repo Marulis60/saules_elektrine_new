@@ -1,6 +1,3 @@
-import random, datetime
-
-
 def rusiuoti(elektros_kainos):
     global indeksas
     print(elektros_kainos)

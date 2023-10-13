@@ -1,8 +1,6 @@
 {% extends "base.html" %}
-
 {% block "title" %}Solar: Vartotojo profilis{% endblock %}
 {% load crispy_forms_tags %}
-
 {% block "content" %}
     <div class="content-section">
       <div class="media">
@@ -12,17 +10,8 @@
           <p class="text-secondary">{{ user.email }}</p>
         </div>
       </div>
-      <!-- FORM HERE -->
-              <form method="POST" enctype="multipart/form-data">
+        <form method="POST" enctype="multipart/form-data">
           {% csrf_token %}
-<!--          <fieldset>-->
-<!--              <legend class="border-bottom mb-4">Profilio info</legend>-->
-<!--              {{ u_form|crispy }}-->
-<!--              {{ p_form|crispy }}-->
-<!--          </fieldset>-->
-<!--          <div class="form-group">-->
-<!--                <button class="btn btn-outline-info" type="submit">Atnaujinti</button>-->
-<!--          </div>-->
       </form>
     </div>
 {% endblock %}

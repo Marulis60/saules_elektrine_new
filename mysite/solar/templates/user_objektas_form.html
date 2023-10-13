@@ -1,10 +1,9 @@
 {% extends "base.html" %}
 
 {% block "title" %}Solar: naujas objektas{% endblock %}
-
 {% block "content" %}
-    {% load crispy_forms_tags %}
-    <div class="content-section">
+{% load crispy_forms_tags %}
+<div class="content-section">
     <form method="POST">
         {% csrf_token %}
         <fieldset class="form-group">
@@ -15,5 +14,5 @@
             <button class="btn btn-outline-info" type="submit">Išsaugoti</button>
         </div>
     </form>
-    </div>
+</div>
 {% endblock %}

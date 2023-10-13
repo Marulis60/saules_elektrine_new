@@ -1,15 +1,12 @@
 {% extends "base.html" %}
-
 {% block "title" %}Elektros Ūkis: Home>{% endblock %}
-
-
 {% block "content" %}
-  <h1>Solar plant</h1>
-  <p>šiuo metu turime:</p>
+<h1>Solar plant</h1>
+<p>šiuo metu turime:</p>
 <ul>
-  <li><strong>Objektų:  </strong>{{num_objects}}</li>
-  <li><strong>klientų:  </strong>{{num_clients}}</li>
-     <a href="{% url 'load-data' %}">NordPool valandiniai duomenys</a>
+    <li><strong>Objektų: </strong>{{num_objects}}</li>
+    <li><strong>klientų: </strong>{{num_clients}}</li>
+    <a href="{% url 'load-data' %}">NordPool valandiniai duomenys</a>
 </ul>
 <p>Čia jūs lankotes {{ num_visits }}-ą kartą.</p>
 {% endblock %}
