@@ -5,9 +5,13 @@
 <h1>Mano objektai:</h1>
 <ul>
     <div class="row">
+        {% if objektai %}
         {% for objektas in objektai %}
         <h4 class="card-subtitle mb-2 text-muted">{{ objektas }}</h4>
         {% endfor %}
+        {% else%}
+        <h3>Klientas dar neturi objektų</h3>
+        {% endif%}
     </div>
 </ul>
 {% endblock %}

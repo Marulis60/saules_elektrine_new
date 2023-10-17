@@ -85,7 +85,7 @@ if dabartinis_laikas >= 10 and dabartinis_laikas < 24:
         rusiavimas.append(skaidymas[2])
     rezultatas = (surusiuoti(kaina))
     # kainų įrašymas į csv failą
-    with open("birza00.csv", 'w', encoding="UTF-8", newline='') as failas:
+    with open("birza.csv", 'w', encoding="UTF-8", newline='') as failas:
         csv_writer = csv.writer(failas)
         csv_writer.writerow(['VALANDOS', 'KAINA', 'RŪŠIAVIMAS', 'ĮKRAUTI', 'IŠKRAUTI'])
         for i in range(24):

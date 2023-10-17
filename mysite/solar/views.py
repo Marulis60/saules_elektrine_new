@@ -36,7 +36,7 @@ def index(request):
 
 def klientai(request):
     klientai = Klientas.objects.all()
-    paginator = Paginator(Klientas.objects.all(), 4)
+    paginator = Paginator(Klientas.objects.all(), 3)
     page_number = request.GET.get('page')
     paged_klientai = paginator.get_page(page_number)
     context = {
@@ -92,9 +92,12 @@ def search(request):
     didžiosios/mažosios.
     """
     query = request.GET.get('query')
-    search_results = Klientas.objects.filter(
+    search_results = Objektas.objects.filter(Q(adresas__icontains=query) |
         Q(klientas__vardas__icontains=query) | Q(klientas__pavarde__icontains=query))
     return render(request, 'search.html', {'objektai': search_results, 'query': query})
+    # search_results = Klientas.objects.filter(
+    #     Q(klientas__vardas__icontains=query) | Q(klientas__pavarde__icontains=query))
+    # return render(request, 'search.html', {'objektai': search_results, 'query': query})
 #
 #
 @csrf_protect
